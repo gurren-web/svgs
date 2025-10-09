@@ -1,0 +1,251 @@
+/**
+ * @name system24 (wired)
+ * @description a tui-style discord theme.
+ * @author refact0r
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+@import url(https://warrayquipsome.github.io/Chillax/Addons/SimpleLessLag.css);
+body {
+    /* font, change to '' for default discord font */
+    --font: 'JetBrains Nerd Font Mono'; /* change to '' for default discord font */
+    --code-font: 'JetBrains Nerd Font Mono'; /* change to '' for default discord font */
+    font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+    /* window controls */
+    --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+    --window-control-size: 0px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: hide; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/0/08/Serial_Experiments_Lain_unofficial_logo.svg'); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: image; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url('https://github.com/gurren-web/svgs-pngs/blob/main/pngs/lain_stare2.png?raw=true'); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(
+        70deg, 
+        var(--blue-2), 
+        var(--purple-2), 
+        var(--red-2)); /* fixed color/gradient (css background property) */
+
+    /* background image options */
+    --background-image: on; /* off: no background image, on: enable background image (must set url variable below) */
+    --background-image-url: url('https://github.com/gurren-web/svgs-pngs/blob/main/wallpapers/tables-and-chairs.png?raw=true'); /* url of the background image */
+
+    /* transparency/blur options */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+    --panel-blur: off; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+    /* unrounding options */
+    --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+    /* styling options */
+    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+    --ascii-loader: cats; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+
+    /* panel labels */
+    --panel-labels: on; /* off: default, on: add labels to panels */
+    --label-color: var(--text-muted); /* color of labels */
+    --label-font-weight: 500; /* font weight of labels */
+}
+@import url('C:\\Users\\ACER\\.cache\\wal\\colors.css');
+/* color options */
+:root {
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+    /* text colors */
+    --text-0: #bc738a; /* text on colored elements */
+    --text-1: #d2738a; /* other normally white text */
+    --text-2: #c45f79; /* headings and important text */
+    --text-3: #C1B492; /* normal text */
+    --text-4: #C1B492; /* icon buttons and channels */
+    --text-5: rgba(188, 115, 138, 0.75); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: rgba(192, 71, 102, 0.145); /* dark buttons when clicked */
+    --bg-2: rgba(245, 142, 168, 0.145); /* dark buttons */
+    --bg-3: rgba(0, 0, 0, 0.65); /* spacing, secondary elements */
+    --bg-4: rgba(0, 0, 0, 0.65); /* main background color */
+    --hover: rgba(188, 115, 138, 0.11); /* channels and buttons when hovered */
+    --active: rgba(188, 115, 138, 0.2); /* channels and buttons when clicked or selected */
+    --active-2: rgba(210, 115, 138, 0.09); /* extra state for transparent buttons */
+    --message-hover: var(--hover); /* messages when hovered */
+
+    /* accent colors */
+    --accent-1: var(--purple-1); /* links and other accent text */
+    --accent-2: var(--purple-2); /* small accent elements */
+    --accent-3: var(--purple-3); /* accent buttons */
+    --accent-4: var(--purple-4); /* accent buttons when hovered */
+    --accent-5: var(--purple-5); /* accent buttons when clicked */
+    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* status indicator colors */
+    --online: var(--green-2); /* change to #40a258 for default */
+    --dnd: oklch(66.957% 0.22502 10.365); /* change to #d83a41 for default */
+    --idle: var(--yellow-2); /* change to #cc954c for default */
+    --streaming: var(--purple-2); /* change to ##9147ff for default */
+    --offline: #595959; /* change to #82838b for default offline color */
+
+    /* border colors */
+    --border-light: var(--hover); /* general light border color */
+    --border: rgba(89, 89, 89, 0.096); /* general normal border color */
+    --border-hover: rgba(210, 115, 138, 0.4); /* border color of panels when hovered */
+    --button-border: hsl(220, 0%, 100%, ); /* neutral border color of buttons */
+
+    /* base colors */
+    --red-1: #B4637A;
+    --red-2: oklch(47.239% 0.12315 6.566);
+    --red-3: #9c5569;
+    --red-4: #904f61;
+    --red-5: #85495a;
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(83.21% 0.129 194.6);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: #56949F;
+    --blue-2: #e0b2a5;
+    --blue-3: #457880;
+    --blue-4: #3e6b72;
+    --blue-5: #375f65;
+
+    --yellow-1: #EA9D34;
+    --yellow-2: #ffb347;
+    --yellow-3: #cd8b2f;
+    --yellow-4: #bb7f2b;
+    --yellow-5: #a87227;
+
+    --purple-1: #d2738a;
+    --purple-2: rgba(210, 115, 138, 1);
+    --purple-3: rgba(188, 115, 138, .4);
+    --purple-4: #807b8c;
+    --purple-5: #736f7d;
+}
+
+/* The badge icon when you're connected to a voice channel */
+.isCurrentUserConnected__650eb svg,
+[class*="isCurrentUserConnected"] svg {
+    color: #bc738a !important;
+}
+
+
+/* Background of the badge */
+[class*="isCurrentUserConnected"] {
+    background-color: oklch(47.239% 0.12315 6.566) !important;
+}
+
+/* Speaking border - changes the green ring when someone speaks */
+.speaking__2f4f7,
+[class*="border"][class*="speaking"] {
+    box-shadow: inset 0 0 0 3px #D2738A !important;
+    border-color: #D2738A !important;
+}
+
+/* Speaking border - changes the ring in VC user list */
+.avatarSpeaking__07f91,
+[class*="avatarSpeaking"] {
+    box-shadow: inset 0 0 0 2px #D2738A, inset 0 0 0 3px var(--bg-3) !important;
+}
+
+/* Link colors - only affects clickable links */
+.anchor_edefb8,
+[class*="anchor"] {
+    color: #80FFF4 !important; /* change this to your desired link color */
+}
+
+/* Link hover color */
+.anchor_edefb8:hover,
+[class*="anchor"]:hover {
+    color: #a0fff7 !important; /* lighter shade for hover */
+}
+
+/* "New" badge color on channels */
+.newChannel__599fa,
+[class*="newChannel"] {
+    background-color: oklch(47.239% 0.12315 6.566) !important; /* change to your desired color */
+}
+
+/* Star icon for locked/premium channels */
+path[fill*="creator-revenue-locked-channel-icon"],
+svg path[fill*="creator-revenue"] {
+    fill: #D2738A !important; /* change to your desired color */
+}
+
+/* Context menu background opacity */
+.layer__59d0d [class*="menu"],
+.layer__59d0d .scroller_c1e9c4 {
+    background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.button__201d5.colorGreen__201d5 {
+    background-color: #f486a1 !important; /* changes the green button to your color */
+    color: #000000 !important; /* text color */
+}
+
+.show-me-your-name-affix.show-me-your-name-prefix {
+    color: #C1B492 !important;
+    -webkit-text-fill-color: #C1B492 !important;
+}
+
+/* Mute button - unmuted */
+.micButtonWithMenu__37e49[aria-checked="false"] .lottieIcon__5eb9b {
+    color: #e0b2a5 !important;
+    --__lottieIconColor: #e0b2a5 !important;
+}
+
+/* Mute button - muted */
+.micButtonWithMenu__37e49[aria-checked="true"] .lottieIcon__5eb9b {
+    color: #d2738a !important;
+    --__lottieIconColor: #d2738a !important;
+}
+
+
+button[aria-label="User Settings"] .lottieIcon__5eb9b {
+    color: #d2738a !important;
+    --__lottieIconColor: #d2738a !important;
+}
+
+
+
